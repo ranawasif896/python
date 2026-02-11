@@ -1,0 +1,275 @@
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+
+
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+
+#     # Insert at Start
+#     def insert_start(self, data):
+#         new = Node(data)
+#         new.next = self.head
+#         self.head = new
+
+#     # Insert at End
+#     def insert_end(self, data):
+#         new = Node(data)
+
+#         if self.head is None:
+#             self.head = new
+#             return
+
+#         temp = self.head
+#         while temp.next:
+#             temp = temp.next
+#         temp.next = new
+
+#     # Insert at Position
+#     def insert_position(self, pos, data):
+#         new = Node(data)
+
+#         if pos == 1:
+#             new.next = self.head
+#             self.head = new
+#             return
+
+#         temp = self.head
+#         i = 1
+
+#         while temp and i < pos - 1:
+#             temp = temp.next
+#             i += 1
+
+#         if temp is None:
+#             print("Invalid Position")
+#         else:
+#             new.next = temp.next
+#             temp.next = new
+
+#     # Delete from Start
+#     def delete_start(self):
+#         if self.head is None:
+#             print("List Empty")
+#         else:
+#             self.head = self.head.next
+
+#     # Delete from End
+#     def delete_end(self):
+#         if self.head is None:
+#             print("List Empty")
+#             return
+
+#         if self.head.next is None:
+#             self.head = None
+#             return
+
+#         temp = self.head
+#         while temp.next.next:
+#             temp = temp.next
+
+#         temp.next = None
+
+#     # Delete from Position
+#     def delete_position(self, pos):
+#         if self.head is None:
+#             print("List Empty")
+#             return
+
+#         if pos == 1:
+#             self.head = self.head.next
+#             return
+
+#         temp = self.head
+#         i = 1
+
+#         while temp and i < pos - 1:
+#             temp = temp.next
+#             i += 1
+
+#         if temp is None or temp.next is None:
+#             print("Invalid Position")
+#         else:
+#             temp.next = temp.next.next
+
+#     # Count Nodes
+#     def count(self):
+#         temp = self.head
+#         c = 0
+#         while temp:
+#             c += 1
+#             temp = temp.next
+#         return c
+
+#     # Search Value
+#     def search(self, value):
+#         temp = self.head
+#         pos = 1
+
+#         while temp:
+#             if temp.data == value:
+#                 print("Found at position", pos)
+#                 return
+#             temp = temp.next
+#             pos += 1
+
+#         print("Not Found")
+
+#     # Reverse List
+#     def reverse(self):
+#         prev = None
+#         current = self.head
+
+#         while current:
+#             next_node = current.next
+#             current.next = prev
+#             prev = current
+#             current = next_node
+
+#         self.head = prev
+
+#     # Display List
+#     def show(self):
+#         temp = self.head
+#         while temp:
+#             print(temp.data, end=" -> ")
+#             temp = temp.next
+#         print("None")
+
+
+
+
+# l = LinkedList()
+
+# l.insert_end(10)
+# l.insert_end(20)
+# l.insert_end(30)
+
+# l.show()
+
+# l.reverse()
+# l.show()
+
+# print("Total Nodes:", l.count())
+
+# l.search(20)
+
+# l.delete_position(2)
+# l.show()
+
+
+
+
+
+
+
+# class Node:
+#     def __init__(self, data):
+#         self.pre=None
+#         self.data = data
+#         self.next = None
+
+
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+
+
+#     def input(self, data):
+       
+#         new = Node(data)
+
+#         if self.head is None:
+#             self.head = new
+#             return
+
+#         temp = self.head
+#         while temp.next:
+#             temp = temp.next
+#         temp.next = new
+#         new.prev=temp
+#     def display(self):
+#         temp=self.head
+#     while temp is None:
+#         print(temp.data)
+#         temp=temp.next
+    
+#     def delete(self,data):
+#         if self.head is None:
+#             print("list is empty")
+#             return 
+#             self.head=None
+#         if temp.next is None:
+#             temp=self.head
+#         while temp.next:
+#             temp=temp.next
+#         temp.prev.next=None
+    
+
+
+# class Stack:
+#     def __init__(self):
+#         self.item=[]
+#     def push(self,data):
+#         self.item.append(data)
+#     def pop(self):
+#         if self.isempty():
+#             print("LIst is empty")
+#             return None
+#         return self.item.pop()
+#     def peek(self):
+#         if self.isempty():
+#             print("LIst is empty")
+#             return None
+#         return self.item[-1]
+#     def isempty(self):
+#         return len(self.item)==0
+#     def show(self):
+#         print("Stack is:",self.item)
+
+# i=Stack()
+# i.push(20)
+# i.push(30)
+# i.show()
+
+
+
+
+
+
+
+
+
+
+class Queue:
+    def __init__(self):
+        self.item=[]
+    def enqueue(self,data):
+        self.item.append(data)
+    def dqueue(self):
+        if self.isempty():
+            print("LIst is empty")
+            return None
+        return self.item.pop(0)
+    def peak(self):
+        if self.isempty():
+            print("List is empty")
+            return None
+        return self.item[0]
+    def isempty(self):
+        return len(self.item)==0
+    def show(self):
+        print("Queue is:",self.item)
+
+q=Queue()
+q.enqueue(30)
+q.enqueue(20)
+q.show()
+print(q.isempty())
+
+
+      
+
+        
